@@ -44,7 +44,7 @@ The handoff point between CI and CD is the Docker Repository. In this case we de
 Refractr's dependencies are managed with [poetry](https://python-poetry.org/). In order to interact with the system locally, having poetry installed and setup is a requirement. Once tools are in place, a simple `$ poetry install` in the repo's base dir is enough to get started. From here on forward, `$ poetry shell` can be used to prepare your open shell session for interacting with the system directly. It is also possible to prepend commands with `$ poetry run`.
 
 ## Doit Automation (like Make)
-The **mozilla-it/refractr** repository has a **dodo.py** ([doit](https://pydoit.org/)) that defines the list of tasks that can be performed. This approach was chosen to allow the developer to run the same automation at their desk as what is run during CI. This promotes tight feedback loops for the developers and confidence that once the changes are pushed they are most likely to succeed because they have already run them locally. Below is the output of the **doit list** command.
+The **mozilla/refractr** repository has a **dodo.py** ([doit](https://pydoit.org/)) that defines the list of tasks that can be performed. This approach was chosen to allow the developer to run the same automation at their desk as what is run during CI. This promotes tight feedback loops for the developers and confidence that once the changes are pushed they are most likely to succeed because they have already run them locally. Below is the output of the **doit list** command.
 
 ```sh
 $ poetry run doit list
@@ -114,7 +114,7 @@ This task generates a yaml document that is suitable for refractr's infrastructu
 ## Refractr CLI
 The **refractr cli** is an Argparse command tool to transform the **refractr.yml** to the **refractr.conf** (for nginx). This tool was written to print output of transformations to terminal.  This allows the user to "see" what the transformations will do.  The same fascilities will be used during the build of the docker image.  The help output is shown below will all of the subcommands described.
 ```
-~/repos/mozilla-it/refractr > bin/refractr --help
+~/repos/mozilla/refractr > bin/refractr --help
 usage: refractr [-h] [-c CFG] [-o OUPUT] {show,sh,domains,do,certificate_manager_input,cmi,nginx,ngx,ingress,ing,validate,val} ...
 
 refractr
